@@ -1,0 +1,72 @@
+   <!DOCTYPE html>
+    <html lang="en">
+    <head>
+   <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+      <titleNotice Board|General</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+              <link rel='stylesheet' href='/css/bootstrap.css'>
+              <link rel='stylesheet' href='/css/style.css'>
+      <script type='text/javascript' src="/js/bootstrap.js"></script>
+          </head>
+    <body>
+
+           <div class="container">
+
+          <div class="header clearfix">
+          <div class="logo">
+             Andela 
+          </div>
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link " href="/">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/register">Register</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/users/logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+       
+      </div>
+
+  
+    <div class="row">
+    
+
+      <div class="col-sm-6 col-md-6 col-md-offset-5">
+        <h2 class="text-center.login-title"> Sign in to Notice Board</h2>
+          <div class="account-wall">
+            <img class='profile-img' src='https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120'>
+            <form class='form-signin' action='/users/login', method='POST'>
+              <input type='text' name='username' class='form-control' placeholder='Username' required  autofocus>
+              <input type='password' name='password' class='form-control' placeholder='Password' required>
+              <button class='btn btn-lg btn-primary btn-block' type='submit'> Sign in </button>
+              
+          <a href='/users/register' class='text-center new-account'> Create an account
+          </a>
+        
+         
+          </form>
+          </div>  
+    </div>
+
+  </div>
+  <footer class="footer">
+        <p>&copy; Sokunbi Taiwo 2017</p>
+  </footer>
+
+  </body>
+  </html>

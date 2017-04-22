@@ -1,0 +1,52 @@
+{
+  "name": "notice",
+  "version": "1.0.0",
+  "description": "Notice Board",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metalmount/ANDELA_XVII_PROJECT.git"
+  },
+  "keywords": [
+    "notice"
+  ],
+  "author": "SOKUNBI TAIWO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/metalmount/ANDELA_XVII_PROJECT/issues"
+  },
+  "homepage": "https://github.com/metalmount/ANDELA_XVII_PROJECT#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "chai": "~1.8.1",
+    "bcryptjs": "*",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.3.3",
+    "debug": "^2.1.1",
+    "ejs": "^2.5.6",
+    "express-messages":"*",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "express-handlebars": "*",
+    "express-validator" : "*",
+    "jade": "^1.9.1",
+    "mocha": "~1.14.0",
+    "mongodb": "^2.2.26",
+    "mongoose": "^4.9.5",
+    "morgan": "^1.5.1",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^1.0.0",
+    "passport-http" :"*",
+    "serve-favicon": "^2.2.0",
+    "should": "~2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
