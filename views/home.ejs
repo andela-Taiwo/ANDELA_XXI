@@ -1,20 +1,14 @@
-   <!DOCTYPE html>
+  <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-      <titleNotice Board|General</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <title >Notice Board|General</title>
+              <link rel='stylesheet' href='/css/materialize.css'>
+              <link rel='stylesheet' href='/css/style.css'>   
 
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-              <link rel='stylesheet' href='/css/bootstrap.css'>
-              <link rel='stylesheet' href='/css/style.css'>
-      <script type='text/javascript' src="/js/bootstrap.js"></script>
-          <script >
+               <script >
       function checkDate(field)
         {
           var allowBlank = true;
@@ -61,86 +55,125 @@
         }
 
 
-</script>
+      </script>
+  
+   </head>
+    <body>
+      <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Andela</a>
 
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+              <li><a class="nav-link " href="/">Home </a></li>
+              <li><a class="nav-link" href="/users/home">Post Announcement</a></li>
+              <li><a class="nav-link" href="/users/general">General</a></li>                  
+              <li><a class="nav-link" href="/users/fellow">Fellow</a></li>
+              <li><a class="nav-link" href="/users/staff">Staff</a></li>
+              <li><a class="nav-link" href="/users/logout">Logout</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a  href="/">Home </a></li>
+              <li><a  href="/users/home">Post Announcement</a> </li>
+              <li><a  href="/users/general">General</a></li>
+              <li> <a  href="/users/fellow">Fellow</a></li>
+              <li><a  href="/users/staff">Staff</a></li>
+              <li><a  href="/users/logout">Logout</a></li>
+            </ul>
 
-  </head>
-
-
-  <body>
-
-
-       <body>
-
-           <div class="container">
-
-          <div class="header clearfix">
-          <div class="logo">
-             Andela 
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">Menu</i></a>
           </div>
-        <nav>
-          <ul class="nav nav-pills float-right">
-            <li class="nav-item">
-              <a class="nav-link " href="/">Home </a>
-            </li>
-            <li class="nav-item">
-                  <a class="nav-link" href="/users/home">Post Announcement</a>
-                </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/users/general">General</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/users/fellow">Fellow</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/users/staff">Staff</a>
-            </li>
-              <li class="nav-item">
-              <a class="nav-link" href="/users/logout">Logout</a>
-            </li>
-          </ul>
-        </nav>
+      </nav> 
+
        
-      </div>   
-
       
-        <div class="mainBg">
-          <div>
-               <h3>Welcome to General Notice Board  <%=user.username%></h3>
+      <div class="container">
+       <div class="row page-title">
+      
+            <div class ="col l12  heading">
+              <h1> General Notice Board </h1>
+              <p/>
+              <h2> Welcome <%=user.username%></h2>
+            </div>
+      </div>
+
+      <div class="col l6 card-panel">
+
+        <div class="col l4">            
+               
+          
           <form action="/users/home" method="POST" onsubmit="return checkForm(this);" >
-            <label>Name:</label> <br>
-            <input type="text" placeholder="" name="name" value="<%=user.username%>" id="input_text"><br>
-            <label>Category:</label><br>
-            <select name="dropdown" id="input_text">
-              <option value="general" selected>General</option>
-              <option value="fellow">Fellow</option>
+
+
+        <div class="row">
+
+          <div class="input-field col s12">
+           
+            <input id="icon_prefix" type="text" name="name" value="<%=user.username%>" class="validate">
+            <label for="icon_prefix">Full Name</label>
+          </div>
+        </div>
+       <div class="row">
+          <div class="input-field col s12">
+            <select name="dropdown">
+              <option value="general" >General</option>
+              <option value="fellow">Fellows</option>
               <option value="staff">Staff</option>
-            </select><br>
 
-            <label>Title:</label> <br>
-            <input type="text" placeholder="Title" name="title" required id="input_text"><br>
-            <label>Message:</label> <br>
-             <textarea cols="17" rows="12" placeholder="Message" name="message" required id="input_text"></textarea><br>
+            </select>
+            <label>Category</label>
+          </div>
+       </div>
+       
+      <div class="row">
+          <div class="input-field col s12">
+           
+            <input id="icon_prefix" type="text" name="title"  class="validate">
+            <label for="icon_prefix">Title</label>
+          </div>
+      </div>
+      
+       <div class="row">
+              <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea" name="message"></textarea>
+                <label for="textarea1">Message</label>
+              </div>
+      </div>
 
-            <label>Due Date:</label>  <br>
-             <input type="text" name="startdate" placeholder="mm/dd/yyyy" required pattern="\d{1,2}/\d{1,2}/\d{4}" id="input_text"><br>
-            <label>Priority:</label><br>
-            <input type="text" name="priority" placeholder="enter(1-3)" required pattern="[1-3]" id="input_text"><br>
-
-            <!-- <select name="priority" id="input_text" pattern="\d{1}">
-              <option value=1 selected>1</option>
-              <option value=2>2</option>
-              <option value=3>3</option>
-            </select> --><br>
-
+      <div class="row">
+          <div class="input-field col s12">           
+            <input id="icon_prefix" type="text"  name="startdate" placeholder="mm/dd/yyyy" required pattern="\d{1,2}/\d{1,2}/\d{4}"  class="validate">
+            <label for="icon_prefix">Due Date</label>
+          </div>
+       </div>
+      <div class="row">
+          <div class="input-field col s12">           
+            <input id="icon_prefix" type="text" name="priority" placeholder="enter(1-3)" required pattern="[1-3]"  class="validate">
+            <label for="icon_prefix">Priority</label>
+          </div>
+       </div>
             
             <button type="submit" id="join">Post</button>
           </form>
           </div>
-           
         </div>
+      </div>
 
-    </div>
-      
-    </body>
-    </html>
+     
+    
+
+
+
+ <script type='text/javascript' src="/js/jquery.js"></script>
+  <script type='text/javascript' src="/js/materialize.js"></script> 
+  <script>$(document).ready(function(){
+        $(".button-collapse").sideNav();
+        $('select').material_select();
+        $('.parallax').parallax();
+        $(".dropdown-button").dropdown({
+            hover: false
+        });
+    });</script>
+
+</body>
+</html>
+

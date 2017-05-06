@@ -1,83 +1,91 @@
-    
 <!DOCTYPE html>
-<head>
-  <meta charset="UTF-8">
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-      <titleNotice Board|General</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <title >Notice Board|General</title>
+              <link rel='stylesheet' href='/css/materialize.css'>
+              <link rel='stylesheet' href='/css/style.css'>        
+      
 
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-              <link rel='stylesheet' href='/css/bootstrap.css'>
-              <link rel='stylesheet' href='/css/style.css'>
-      <script type='text/javascript' src="/js/bootstrap.js"></script>
           </head>
     <body>
-
-           <div class="container">
-
-          <div class="header clearfix">
-          <div class="logo">
-             Andela 
-          </div>
         <nav>
-          <ul class="nav nav-pills float-right">
-            <li class="nav-item">
-              <a class="nav-link " href="/">Home </a>
-            </li>
-            <li class="nav-item">
-                  <a class="nav-link" href="/users/home">Post Announcement</a>
-                </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/users/general">General</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/users/fellow">Fellow</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/users/staff">Staff</a>
-            </li>
-              <li class="nav-item">
-              <a class="nav-link" href="/users/logout">Logout</a>
-            </li>
-          </ul>
-        </nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Andela</a>
+
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+              <li><a class="nav-link " href="/">Home </a></li>
+              <li><a class="nav-link" href="/users/home">Post Announcement</a></li>
+              <li><a class="nav-link" href="/users/general">General</a></li>                  
+              <li><a class="nav-link" href="/users/fellow">Fellow</a></li>
+              <li><a class="nav-link" href="/users/staff">Staff</a></li>
+              <li><a class="nav-link" href="/users/logout">Logout</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a  href="/">Home </a></li>
+              <li><a  href="/users/home">Post Announcement</a> </li>
+              <li><a  href="/users/general">General</a></li>
+              <li> <a  href="/users/fellow">Fellow</a></li>
+              <li><a  href="/users/staff">Staff</a></li>
+              <li><a  href="/users/logout">Logout</a></li>
+            </ul>
+
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">Menu</i></a>
+          </div>
+      </nav> 
+
        
+      
+      <div class="container">
+       <div class="row page-title">
+      
+          <div class ="col l12  heading">
+              <h1> Fellow Notice Board </h1>
+              <p/>
+              <h2> Welcome <%=user.username%></h2>
+            </div>
       </div>
-    <div>
 
-    </div>
+      <div class="row card-panel">
+        <div class="col l12">
+          <ul class="announcements">
+            <% for(var i=0; i<announcements.length; i++) {%>
+              <% if(announcements[i].dropdown === 'fellow' &&(announcements[i].startdate >= dateNow())  ){%>
+              <div class="announcements-group col l6">
+                
+                  <div class="card-panel">
+                    <li class="message "> <span><h6><%= announcements[i].name %></h6></span></li>
 
-       <ul class="announcements">
-       <h3 class="page-title">Welcome to Staff Notice Board</h3>
-          <% for(var i=0; i<announcements.length; i++) {%>
-            <% if(announcements[i].dropdown === 'fellow' &&(announcements[i].startdate>= new Date().toLocaleDateString()) ){%>
-              <div class="announcements-group">
-                  <li class="message">
-                    <span><h5><%= announcements[i].name %></h5></span>          
-
-                  </li>
-
-
-                  <li class="message">
-                        <b><span><%= announcements[i].title %></b></span><br>
-           
-                    Message: <h4><span><%= announcements[i].message %><h4></span>
-
-                  </li>
-                  <li class="message">
-                    <i>Due Date: </i><span><%= announcements[i].startdate %></span>
-                  </li>
+                    <li class="message"><b><span><%= announcements[i].title %></b></span><br>       
+                      Message: <h5><span><%= announcements[i].message %></h5></span>
+                    </li>
+                    <li class="message"><i>Due Date: </i><span><%= announcements[i].startdate %></span> </li>
+                    <li><span></span></li>
+                  
+                </div>              
               </div>
+              <% } %>
             <% } %>
-          <% } %>
-      </ul>
+          </ul>
+        </div>
+      </div>
 
-    </div>
-    </div>
+     </div>
+    
+</div>
+
+
+ <script type='text/javascript' src="/js/jquery.js"></script>
+  <script type='text/javascript' src="/js/materialize.js"></script> 
+  <script>$(document).ready(function(){
+        $(".button-collapse").sideNav();
+        $('.parallax').parallax();
+        $(".dropdown-button").dropdown({
+            hover: false
+        });
+    });</script>
 
 </body>
 </html>

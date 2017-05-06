@@ -37,19 +37,53 @@ router.get('/home',function(req,res){
 
 router.get('/general', (req,res)=>{
 	db.collection('announcements').find().sort({priority:-1}).toArray((err,result)=>{
-		res.render('general.ejs',{announcements:result})
+		res.render('general.ejs',{announcements:result,			
+			    dateNow: function() {
+			        var dateNow = new Date();
+			        var dd = dateNow.getDate();
+			        var monthSingleDigit = dateNow.getMonth() + 1,
+			            mm = monthSingleDigit < 10 ? '0' + monthSingleDigit : monthSingleDigit;
+			        var yy = dateNow.getFullYear().toString().substr(2);
+
+			        return (mm + '/' + dd + '/' + yy);
+			    } 
+
+				
+		})
 	})
 })
 
 router.get('/fellow', (req,res)=>{
 	db.collection('announcements').find().sort({"id":-1}).toArray((err,result)=>{
-		res.render('fellow.ejs',{announcements:result})
+		res.render('fellow.ejs',{announcements:result,
+			 dateNow: function() {
+			        var dateNow = new Date();
+			        var dd = dateNow.getDate();
+			        var monthSingleDigit = dateNow.getMonth() + 1,
+			            mm = monthSingleDigit < 10 ? '0' + monthSingleDigit : monthSingleDigit;
+			        var yy = dateNow.getFullYear().toString().substr(2);
+
+			        return (mm + '/' + dd + '/' + yy);
+			    } 
+
+		})
 	})
 })
 
 router.get('/staff', (req,res)=>{
 	db.collection('announcements').find().sort({priority:-1}).toArray((err,result)=>{
-		res.render('staff.ejs',{announcements:result})
+		res.render('staff.ejs',{announcements:result,
+			 dateNow: function() {
+			        var dateNow = new Date();
+			        var dd = dateNow.getDate();
+			        var monthSingleDigit = dateNow.getMonth() + 1,
+			            mm = monthSingleDigit < 10 ? '0' + monthSingleDigit : monthSingleDigit;
+			        var yy = dateNow.getFullYear().toString().substr(2);
+
+			        return (mm + '/' + dd + '/' + yy);
+			    } 
+
+		})
 	})
 })
 router.post('/home',(req,res)=>{
