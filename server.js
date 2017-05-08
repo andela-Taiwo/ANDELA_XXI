@@ -10,8 +10,9 @@ var db
 
 // Configuring Passport
 var passport = require('passport');
-var expressSession = require('express-session');
+
 var cookieParser = require('cookie-parser');
+var expressSession = require('express-session');
 var path = require('path');
 var exphbs = require('express-handlebars');
 var expressValidator = require('express-validator');
@@ -31,10 +32,11 @@ var users = require('./routes/users');
 app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'ejs');
+app.use(cookieParser());
 app.use(expressSession({secret: 'mySecretKey'}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
-app.use(cookieParser());
+
 
 //set static  folder
 app.use(express.static( path.join(__dirname, 'public')));
